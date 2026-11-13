@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-han: "Noto Serif TC", "Songti SC", "PMingLiU", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.font-han {
+  font-family: var(--font-han);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Mễ tự cách (Chinese/Nom character tracing grid) */
+.han-grid-bg {
+  background-color: #FCFBF8;
+  background-image:
+    linear-gradient(to right, rgba(30, 58, 95, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 58, 95, 0.08) 1px, transparent 1px);
+  background-size: 50% 50%;
+}
+
+/* Traditional ink rubbing contrast mode for monument inspection */
+.rubbing-filter {
+  filter: grayscale(100%) contrast(175%) brightness(106%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
